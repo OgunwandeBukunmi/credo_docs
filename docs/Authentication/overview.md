@@ -1,4 +1,4 @@
-# Authentication Overview
+#  Overview
 
 This section documents the authentication system provided by **Credo**.
 
@@ -6,7 +6,7 @@ The authentication module is responsible for:
 - User registration
 - User login
 - Token refresh
-- Logout
+- Logout  
 - Password reset using OTP
 
 All authentication logic is exposed through HTTP endpoints and is **framework-agnostic**, meaning you can use it with any frontend (web, mobile, server-side, etc.).
