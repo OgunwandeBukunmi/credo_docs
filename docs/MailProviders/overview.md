@@ -30,7 +30,7 @@ Every mail provider must:
 
 ## Learn More
 
-- [Console Provider](./console)
-- [Nodemailer Provider](./nodemailer)
-- [Resend Provider](./resend)
-- [Create a Custom Mail Provider](./customMailProvider)
+- [Console Provider](./Console)
+- [Nodemailer Provider](./Nodemailer)
+- [Resend Provider](./Resend)
+- [Create a Custom Mail Provider](./CustomMailProvider)
