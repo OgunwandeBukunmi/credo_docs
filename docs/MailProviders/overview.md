@@ -33,4 +33,4 @@ Every mail provider must:
 - [Console Provider](./Console)
 - [Nodemailer Provider](./Nodemailer)
 - [Resend Provider](./Resend)
-- [Create a Custom Mail Provider](./CustomMailProvider)
+- [Create a Custom Mail Provider](./customMailProvider)

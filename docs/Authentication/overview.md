@@ -1,3 +1,7 @@
+---
+id: overview
+title: Overview
+---
 #  Overview
 
 This section documents the authentication system provided by **Credo**.
