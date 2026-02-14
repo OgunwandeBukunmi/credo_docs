@@ -52,40 +52,5 @@
 }
 
 /* ── Global tweaks ──────────────────────────────────── */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Nicer scrollbar in dark mode */
-[data-theme='dark'] ::-webkit-scrollbar {
-  width: 8px;
-}
-
-[data-theme='dark'] ::-webkit-scrollbar-track {
-  background: #1a1510;
-}
-
-[data-theme='dark'] ::-webkit-scrollbar-thumb {
-  background: #3a3020;
-  border-radius: 4px;
-}
 
 /* Navbar glass effect */
-.navbar {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-[data-theme='dark'] .navbar {
-  background: rgba(15, 13, 10, 0.85);
-}
-
-/* Footer polish */
-.footer--dark {
-  background: #0a0908;
-}

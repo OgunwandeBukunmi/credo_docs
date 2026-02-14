@@ -137,6 +137,7 @@ export default function Home() {
     <Layout
       title={siteConfig.title}
       description="Credo – pluggable authentication, mail providers, and database adapters"
+      className={styles.layoutWrapper}
     >
       <HomepageHeader />
       <InstallBanner />
