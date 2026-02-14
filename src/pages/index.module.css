@@ -1,28 +1,114 @@
+/* ── Hero ──────────────────────────────────────────── */
 .hero {
-  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 1.5rem 5rem;
   text-align: center;
-  background: linear-gradient(135deg,
-      #0f172a,
-      #020617);
+  background: linear-gradient(160deg, #0f0d0a 0%, #1a1510 40%, #2a1f10 70%, #0f0d0a 100%);
   color: #fff;
 }
 
+/* animated ambient glow */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  translate: -50% 0;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 168, 64, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    scale: 1;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.15;
+  }
+}
+
+/* floating particles */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(240, 168, 64, 0.4) 50%, transparent 50%),
+    radial-gradient(1px 1px at 80% 30%, rgba(240, 168, 64, 0.3) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 50% 80%, rgba(240, 168, 64, 0.35) 50%, transparent 50%),
+    radial-gradient(1px 1px at 30% 60%, rgba(240, 168, 64, 0.25) 50%, transparent 50%),
+    radial-gradient(1px 1px at 70% 70%, rgba(240, 168, 64, 0.3) 50%, transparent 50%);
+  pointer-events: none;
+  animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+  0% {
+    translate: 0 0;
+  }
+
+  100% {
+    translate: -30px -20px;
+  }
+}
+
 .heroInner {
-  max-width: 900px;
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
   margin: 0 auto;
 }
 
+.heroLogo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 24px rgba(240, 168, 64, 0.35));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+}
+
 .title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: 3.8rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #fff 30%, #f0a840 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  opacity: 0.85;
-  line-height: 1.6;
+  margin-top: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .buttons {
@@ -34,31 +120,209 @@
 }
 
 .primaryBtn {
-  background: #6366f1;
-  border: none;
+  background: linear-gradient(135deg, #f0a840, #c87b14) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(240, 168, 64, 0.3);
+  transition: all 0.25s ease;
 }
 
 .primaryBtn:hover {
-  background: #4f46e5;
+  background: linear-gradient(135deg, #f4bc62, #dc8816) !important;
+  box-shadow: 0 6px 28px rgba(240, 168, 64, 0.45);
+  translate: 0 -2px;
+  color: #fff !important;
 }
 
 .secondaryBtn {
-  color: #fff;
-  border-color: #64748b;
+  color: #f0a840 !important;
+  border-color: rgba(240, 168, 64, 0.4) !important;
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
 
 .secondaryBtn:hover {
-  border-color: #e5e7eb;
+  border-color: #f0a840 !important;
+  background: rgba(240, 168, 64, 0.08) !important;
+  color: #f4bc62 !important;
+  translate: 0 -2px;
 }
 
-.code {
-  background-color: #1e293b;
-  color: #f8fafc;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-family: "JetBrains Mono", monospace;
+/* ── Install banner ───────────────────────────────── */
+.installSection {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(180deg, #0f0d0a, #141210);
+}
+
+.installCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(26, 21, 16, 0.8);
+  border: 1px solid rgba(240, 168, 64, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92rem;
+  color: #f0a840;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.installCard:hover {
+  border-color: rgba(240, 168, 64, 0.4);
+}
+
+.installPrefix {
+  color: rgba(255, 255, 255, 0.4);
+  user-select: none;
+}
+
+.installCmd {
+  color: #f4bc62;
+}
+
+.installCopy {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  transition: color 0.2s;
+}
+
+.installCard:hover .installCopy {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Features ─────────────────────────────────────── */
+.featuresSection {
+  padding: 5rem 1.5rem;
+  background: #fffcf7;
+}
+
+[data-theme='dark'] .featuresSection {
+  background: #0f0d0a;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Stats / Trust banner ─────────────────────────── */
+.statsSection {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(180deg, #fffcf7, #fdf8f0);
+}
+
+[data-theme='dark'] .statsSection {
+  background: linear-gradient(180deg, #0f0d0a, #141210);
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.statItem {
+  text-align: center;
+  min-width: 140px;
+}
+
+.statNumber {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #c87b14, #f0a840);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.statLabel {
   font-size: 0.9rem;
-  display: inline-block;
-  border: 1px solid #334155;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* ── CTA ──────────────────────────────────────────── */
+.ctaSection {
+  padding: 5rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(160deg, #0f0d0a, #1a1510 50%, #2a1f10 100%);
+  color: #fff;
+}
+
+.ctaTitle {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.ctaDesc {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4.5rem 1rem 3.5rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .heroLogo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .statsGrid {
+    gap: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.7rem;
+  }
 }

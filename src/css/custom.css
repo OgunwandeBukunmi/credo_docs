@@ -1,30 +1,91 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * CREDO – Custom global styles
+ * Built on Infima with premium colours inspired by the gold diving-helmet logo.
  */
 
-/* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Light mode tokens ──────────────────────────────── */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #c87b14;
+  --ifm-color-primary-dark: #b46e12;
+  --ifm-color-primary-darker: #a86710;
+  --ifm-color-primary-darkest: #8a550d;
+  --ifm-color-primary-light: #dc8816;
+  --ifm-color-primary-lighter: #e89528;
+  --ifm-color-primary-lightest: #f0a840;
+
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', monospace;
+  --ifm-code-font-size: 92%;
+  --ifm-heading-font-weight: 700;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+
+  /* custom accents */
+  --credo-gold: #f0a840;
+  --credo-gold-dark: #c87b14;
+  --credo-surface: #fdf8f0;
+  --credo-bg: #fffcf7;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* ── Dark mode tokens ───────────────────────────────── */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #f0a840;
+  --ifm-color-primary-dark: #e89528;
+  --ifm-color-primary-darker: #dc8816;
+  --ifm-color-primary-darkest: #c87b14;
+  --ifm-color-primary-light: #f4bc62;
+  --ifm-color-primary-lighter: #f6c87a;
+  --ifm-color-primary-lightest: #fad9a0;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --credo-gold: #f0a840;
+  --credo-gold-dark: #c87b14;
+  --credo-surface: #1a1510;
+  --credo-bg: #0f0d0a;
+
+  --ifm-background-color: #0f0d0a;
+  --ifm-background-surface-color: #1a1510;
+}
+
+/* ── Global tweaks ──────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Nicer scrollbar in dark mode */
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #1a1510;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #3a3020;
+  border-radius: 4px;
+}
+
+/* Navbar glass effect */
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(15, 13, 10, 0.85);
+}
+
+/* Footer polish */
+.footer--dark {
+  background: #0a0908;
 }

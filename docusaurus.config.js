@@ -13,6 +13,22 @@ const config = {
   title: 'CREDO',
   tagline: 'CREDO AUTH is cool',
   favicon: 'img/credo.svg',
+  metadata: [
+    // Open Graph metadata (WhatsApp, Facebook, LinkedIn, etc.)
+    { property: 'og:title', content: 'CREDO - Reusable Auth System' },
+    { property: 'og:description', content: 'CREDO AUTH is a reusable authentication system. Easily integrate secure auth into your projects.' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:image', content: 'https://credo-docs.vercel.app/img/credo.svg' },
+    { property: 'og:url', content: 'https://credo-docs.vercel.app' },
+    { property: 'og:site_name', content: 'CREDO' },
+
+    // Twitter Card metadata
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'CREDO - Reusable Auth System' },
+    { name: 'twitter:description', content: 'CREDO AUTH is a reusable authentication system. Easily integrate secure auth into your projects.' },
+    { name: 'twitter:image', content: 'https://credo-docs.vercel.app/img/credo.svg' },
+    { name: 'twitter:site', content: '@waynethefuture' },
+  ],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -20,7 +36,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://credo-docs.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -75,7 +91,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/credo.svg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
